@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ms" class="h-full bg-gray-50">
+<html lang="ms" class="h-full bg-slate-50">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,9 @@
                 extend: {
                     colors: {
                         navy: {
-                            800: '#0B192C',
-                            900: '#1E3E62',
-                            950: '#000000',
-                        },
-                        gold: {
-                            400: '#F1C40F',
-                            500: '#D4AF37',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#080d1a',
                         }
                     }
                 }
@@ -29,31 +25,28 @@
         @media print {
             body * { visibility: hidden; }
             #printable-slip, #printable-slip * { visibility: visible; }
-            #printable-slip { position: absolute; left: 0; top: 0; width: 100%; }
+            #printable-slip { position: absolute; left: 0; top: 0; width: 100%; color: black !important; background: white !important; }
         }
     </style>
 </head>
-<body class="h-full flex flex-col font-sans text-gray-800 antialiased selection:bg-navy-900 selection:text-white">
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased bg-slate-50 selection:bg-blue-900 selection:text-white">
 
-    <!-- TOP HEADER -->
-    <header class="bg-gradient-to-r from-navy-800 via-navy-900 to-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <!-- TOP HEADER (NAVY BLUE) -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md border-b border-blue-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-lg bg-gold-500/20 border border-gold-500 flex items-center justify-center font-bold text-gold-400 text-lg">
-                    👮
-                </div>
                 <div>
-                    <span class="text-[10px] tracking-widest text-gold-400 font-extrabold uppercase block">Sistem Pengurusan</span>
-                    <h1 class="text-base sm:text-lg font-bold leading-none tracking-tight">Kor SUKSIS UniMAP</h1>
+                    <span class="text-[10px] tracking-widest text-sky-400 font-extrabold uppercase block">Sistem Pengurusan</span>
+                    <h1 class="text-base sm:text-lg font-bold leading-none tracking-tight text-white">Kor SUKSIS UniMAP</h1>
                 </div>
             </div>
 
-            <div id="user-status-bar" class="hidden flex items-center space-x-3 text-xs bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+            <div id="user-status-bar" class="hidden flex items-center space-x-3 text-xs bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
                 <div class="text-right">
                     <span id="nav-user-name" class="font-bold block text-white"></span>
-                    <span id="nav-user-role" class="inline-block bg-gold-500 text-navy-800 font-extrabold px-1.5 py-0.2 text-[9px] rounded uppercase"></span>
+                    <span id="nav-user-role" class="inline-block bg-sky-500/20 text-sky-200 font-extrabold px-1.5 py-0.5 text-[9px] rounded uppercase border border-sky-400/30"></span>
                 </div>
-                <button onclick="logout()" class="p-1.5 hover:bg-red-500/20 text-red-300 hover:text-red-100 rounded-md transition" title="Log Keluar">
+                <button onclick="logout()" class="p-1.5 hover:bg-red-500/20 text-red-300 hover:text-white rounded-md transition" title="Log Keluar">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
                 </button>
             </div>
@@ -64,20 +57,17 @@
     <main class="flex-grow flex items-center justify-center p-4 sm:p-6">
 
         <!-- ================= PAGE 1: LOGIN / REGISTER ================= -->
-        <div id="page-login" class="w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transition-all">
-            <div class="bg-gradient-to-br from-navy-800 to-navy-900 text-white text-center p-6 relative">
-                <div class="inline-block p-3 bg-white/10 rounded-full mb-2">
-                    <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                </div>
+        <div id="page-login" class="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden transition-all my-auto">
+            <div class="bg-slate-900 text-white text-center p-6 relative border-b border-blue-900">
                 <h2 class="text-xl font-bold tracking-tight">Selamat Datang</h2>
-                <p class="text-xs text-slate-300 mt-1">Portal Portal Pentadbiran Kor SUKSIS UniMAP</p>
+                <p class="text-xs text-sky-200 mt-1">Portal Pentadbiran Kor SUKSIS UniMAP</p>
             </div>
 
             <!-- Tabs -->
-            <div class="flex border-b border-gray-100 bg-gray-50/50 p-1 gap-1 text-xs font-semibold text-gray-500">
-                <button onclick="switchLoginTab('pelatih')" id="tab-pelatih" class="flex-1 py-2.5 text-center rounded-lg transition-all text-navy-800 font-bold bg-white shadow-sm">Pelatih</button>
-                <button onclick="switchLoginTab('pegawai')" id="tab-pegawai" class="flex-1 py-2.5 text-center rounded-lg transition-all hover:text-navy-800">Pegawai / JL</button>
-                <button onclick="switchLoginTab('register')" id="tab-register" class="flex-1 py-2.5 text-center rounded-lg transition-all hover:text-navy-800">Daftar</button>
+            <div class="flex border-b border-slate-200 bg-slate-100 p-1 gap-1 text-xs font-semibold text-slate-600">
+                <button onclick="switchLoginTab('pelatih')" id="tab-pelatih" class="flex-1 py-2.5 text-center rounded-lg transition-all text-slate-900 font-bold bg-white shadow-sm">Pelatih</button>
+                <button onclick="switchLoginTab('pegawai')" id="tab-pegawai" class="flex-1 py-2.5 text-center rounded-lg transition-all hover:text-slate-900">Pegawai / JL</button>
+                <button onclick="switchLoginTab('register')" id="tab-register" class="flex-1 py-2.5 text-center rounded-lg transition-all hover:text-slate-900">Daftar</button>
             </div>
 
             <!-- Forms -->
@@ -85,44 +75,46 @@
                 <!-- Login Pelatih -->
                 <form id="form-login-pelatih" onsubmit="handleLoginPelatih(event)" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">NO. BADAN</label>
-                        <input type="text" id="login-badan" required class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition outline-none" placeholder="Contoh: KS 65816">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">NO. BADAN</label>
+                        <input type="text" id="login-badan" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition outline-none placeholder-slate-400" placeholder="Contoh: KS 65816">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">NO. IC / PASSPORT (KATA LALUAN)</label>
-                        <input type="password" id="login-ic" required class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition outline-none" placeholder="040925020246">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">NO. IC / PASSPORT (KATA LALUAN)</label>
+                        <input type="password" id="login-ic" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition outline-none placeholder-slate-400" placeholder="040925020246">
                     </div>
-                    <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold py-2.5 rounded-lg text-sm transition-all shadow-md hover:shadow-lg">LOG MASUK PELATIH</button>
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-blue-950 text-white font-bold py-2.5 rounded-lg text-sm transition-all shadow-md shadow-slate-300 tracking-wide">
+                        LOG MASUK PELATIH
+                    </button>
                 </form>
 
                 <!-- Login Pegawai / JL -->
                 <form id="form-login-pegawai" onsubmit="handleLoginPegawai(event)" class="space-y-4 hidden">
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">NO. BADAN</label>
-                        <input type="text" id="admin-badan" required class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition outline-none" placeholder="PEG01 / JL1">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">NO. BADAN</label>
+                        <input type="text" id="admin-badan" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition outline-none placeholder-slate-400" placeholder="PEG01 / JL1">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">KATA LALUAN ADMIN</label>
-                        <input type="password" id="admin-pass" required class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition outline-none" placeholder="••••••••">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">KATA LALUAN ADMIN</label>
+                        <input type="password" id="admin-pass" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition outline-none placeholder-slate-400" placeholder="••••••••">
                     </div>
-                    <p class="text-[10px] text-gray-400 bg-gray-50 p-2 rounded border border-gray-200/60">Demo Pass: Pegawai (<strong>PEG123</strong>) | JL (<strong>JL1 / JL2 / JL3</strong>)</p>
-                    <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold py-2.5 rounded-lg text-sm transition-all shadow-md">LOG MASUK PEGAWAI/JL</button>
+                    <p class="text-[10px] text-slate-500 bg-slate-100 p-2 rounded border border-slate-200">Demo Pass: Pegawai (<strong>PEG123</strong>) | JL (<strong>JL1 / JL2 / JL3</strong>)</p>
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-blue-950 text-white font-bold py-2.5 rounded-lg text-sm transition-all shadow-md tracking-wide">LOG MASUK PEGAWAI/JL</button>
                 </form>
 
                 <!-- Registration -->
                 <form id="form-register" onsubmit="handleRegister(event)" class="space-y-3.5 hidden">
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">NAMA PENUH</label>
-                        <input type="text" id="reg-nama" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-navy-900" placeholder="Aimi Rasyidah Binti Noor Sulhi">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">NAMA PENUH</label>
+                        <input type="text" id="reg-nama" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 placeholder-slate-400" placeholder="Aimi Rasyidah Binti Noor Sulhi">
                     </div>
                     <div class="grid grid-cols-2 gap-2">
                         <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">NO. BADAN</label>
-                            <input type="text" id="reg-badan" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-navy-900" placeholder="KS 65816">
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">NO. BADAN</label>
+                            <input type="text" id="reg-badan" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 placeholder-slate-400" placeholder="KS 65816">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">SKUAD</label>
-                            <select id="reg-skuad" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-navy-900 bg-white">
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">SKUAD</label>
+                            <select id="reg-skuad" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900">
                                 <option value="JR">JUNIOR</option>
                                 <option value="INTER">INTERMEDIATE</option>
                                 <option value="SENIOR">SENIOR</option>
@@ -130,29 +122,29 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">NO. IC / PASSPORT</label>
-                        <input type="text" id="reg-ic" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-navy-900" placeholder="040925020246">
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">NO. IC / PASSPORT</label>
+                        <input type="text" id="reg-ic" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-blue-900 placeholder-slate-400" placeholder="040925020246">
                     </div>
-                    <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold py-2.5 rounded-lg text-sm transition shadow-md">DAFTAR AKAUN</button>
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-blue-950 text-white font-bold py-2.5 rounded-lg text-sm transition shadow-md tracking-wide">DAFTAR AKAUN</button>
                 </form>
             </div>
         </div>
 
         <!-- ================= MAIN APP WRAPPER ================= -->
-        <div id="app-dashboard" class="hidden w-full max-w-7xl my-2 bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden flex flex-col md:flex-row min-h-[650px]">
+        <div id="app-dashboard" class="hidden w-full max-w-7xl my-2 bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col md:flex-row min-h-[650px]">
 
             <!-- SIDEBAR NAVIGATION -->
-            <nav id="sidebar" class="w-full md:w-64 bg-navy-800 text-white flex-shrink-0 p-4 border-r border-navy-900 flex flex-col justify-between">
+            <nav id="sidebar" class="w-full md:w-64 bg-slate-900 text-white flex-shrink-0 p-4 border-r border-slate-800 flex flex-col justify-between">
                 <div>
                     <div class="mb-6 px-3">
-                        <span class="text-[10px] uppercase font-extrabold text-gold-400 tracking-wider block">MENU UTAMA</span>
-                        <p class="text-xs text-slate-300">Navigasi Pentadbiran</p>
+                        <span class="text-[10px] uppercase font-extrabold text-sky-400 tracking-wider block">MENU UTAMA</span>
+                        <p class="text-xs text-slate-400">Navigasi Pentadbiran</p>
                     </div>
                     <div id="nav-links" class="space-y-1.5 text-xs font-medium">
-                        <!-- Dynamic Nav Links Inserted by JS -->
+                        <!-- Dynamic Nav Links -->
                     </div>
                 </div>
-                <div class="hidden md:block pt-4 border-t border-white/10 text-[10px] text-slate-400 text-center">
+                <div class="hidden md:block pt-4 border-t border-slate-800 text-[10px] text-slate-400 text-center">
                     Versi Digital 2026.1
                 </div>
             </nav>
@@ -160,12 +152,12 @@
             <!-- MAIN CONTENT DISPLAY AREA -->
             <section class="flex-1 p-6 bg-slate-50 overflow-y-auto">
 
-                <!-- USER/PELATIH VIEWS -->
+                <!-- 1. HOME / PENGUMUMAN -->
                 <div id="view-home" class="dashboard-view space-y-5">
-                    <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                    <div class="flex justify-between items-center border-b border-slate-200 pb-3">
                         <div>
-                            <h2 class="text-lg font-bold text-navy-800">Papan Pengumuman Utama</h2>
-                            <p class="text-xs text-gray-500">Notis dan arahan semasa Kor SUKSIS UniMAP</p>
+                            <h2 class="text-lg font-bold text-slate-900">Papan Pengumuman Utama</h2>
+                            <p class="text-xs text-slate-500">Notis dan arahan semasa Kor SUKSIS UniMAP</p>
                         </div>
                     </div>
                     <div id="announcement-list" class="space-y-3">
@@ -173,158 +165,249 @@
                     </div>
                 </div>
 
+                <!-- 2. ADMISSION & V-CARD -->
                 <div id="view-admission" class="dashboard-view hidden space-y-6">
-                    <h2 class="text-lg font-bold text-navy-800 border-b border-gray-200 pb-3">Admission & Kad Digital</h2>
+                    <h2 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-3">Admission & Kad Digital</h2>
 
-                    <!-- NEW PREMIUM V-CARD SUKSIS -->
-                    <div class="relative w-full max-w-sm mx-auto h-56 rounded-2xl p-5 text-white shadow-2xl overflow-hidden bg-gradient-to-br from-navy-800 via-navy-900 to-black border border-gold-500/40">
-                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-gold-500/10 rounded-full blur-2xl"></div>
+                    <!-- V-CARD SUKSIS -->
+                    <div class="relative w-full max-w-sm mx-auto h-56 rounded-2xl p-5 text-white shadow-xl overflow-hidden bg-slate-900 border border-blue-900">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-sky-400/10 rounded-full blur-2xl"></div>
                         <div class="flex justify-between items-start relative z-10">
                             <div>
-                                <p class="text-[9px] text-gold-400 font-black uppercase tracking-widest">KOR SUKSIS UNIMAP</p>
+                                <p class="text-[9px] text-sky-300 font-black uppercase tracking-widest">KOR SUKSIS UNIMAP</p>
                                 <h3 class="text-base font-extrabold tracking-wide mt-1" id="vcard-name">Aimi Rasyidah</h3>
-                                <p class="text-xs text-slate-300 font-mono" id="vcard-badan">NO BADAN: KS 65816</p>
+                                <p class="text-xs text-sky-100 font-mono" id="vcard-badan">NO BADAN: KS 65816</p>
                             </div>
-                            <div class="w-14 h-16 bg-slate-200/20 backdrop-blur-md rounded-lg border border-white/30 flex items-center justify-center text-slate-300 text-[10px] font-semibold">
-                                FOTO
+                            <div class="w-16 h-20 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 overflow-hidden flex items-center justify-center">
+                                <img id="vcard-avatar" src="https://via.placeholder.com/150?text=Foto" alt="Foto Pelatih" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <div class="mt-8 pt-4 border-t border-white/10 flex justify-between items-end relative z-10 text-xs">
                             <div>
-                                <span class="text-slate-400 block text-[9px] uppercase font-bold">Skuad</span>
+                                <span class="text-sky-300 block text-[9px] uppercase font-bold">Skuad</span>
                                 <span class="font-bold text-white tracking-wider" id="vcard-skuad">JUNIOR</span>
                             </div>
                             <div>
-                                <span class="text-slate-400 block text-[9px] uppercase font-bold">Status</span>
-                                <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 px-2 py-0.5 rounded-full text-[9px] font-bold inline-block">AKTIF</span>
+                                <span class="text-sky-300 block text-[9px] uppercase font-bold">Status</span>
+                                <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded-full text-[9px] font-bold inline-block">AKTIF</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Letters Section -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
-                            <h3 class="font-bold text-navy-800 text-sm mb-1">Letter of Excuse (Surat Tunjuk Sebab)</h3>
-                            <p class="text-xs text-gray-500 mb-4">Hantar alasan ketidakhadiran latihan/rollcall kepada pihak pentadbiran.</p>
-                            <button onclick="alert('Borang Surat Tunjuk Sebab berjaya dihantar ke pentadbiran.')" class="bg-navy-800 hover:bg-navy-900 text-white text-xs px-4 py-2 rounded-lg font-semibold transition shadow-sm">Mohon Surat Tunjuk Sebab</button>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-bold text-slate-900 text-sm mb-1">Letter of Excuse (Surat Tunjuk Sebab)</h3>
+                            <p class="text-xs text-slate-500 mb-4">Hantar alasan ketidakhadiran latihan/rollcall kepada pihak pentadbiran.</p>
+                            <button onclick="alert('Borang Surat Tunjuk Sebab berjaya dihantar ke pentadbiran.')" class="bg-slate-900 hover:bg-blue-950 text-white text-xs px-4 py-2 rounded-lg font-semibold transition shadow-sm">Mohon Surat Tunjuk Sebab</button>
                         </div>
-                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
-                            <h3 class="font-bold text-navy-800 text-sm mb-1">Warning Letter (Surat Amaran)</h3>
-                            <div id="user-warning-list" class="text-xs text-gray-600 mt-2">
-                                <p class="text-emerald-600">Tiada surat amaran dikeluarkan setakat ini.</p>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-bold text-slate-900 text-sm mb-1">Warning Letter (Surat Amaran)</h3>
+                            <div id="user-warning-list" class="text-xs text-slate-500 mt-2">
+                                <p class="text-emerald-600 font-semibold">Tiada surat amaran dikeluarkan setakat ini.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- 3. PROFIL PELATIH (EDITABLE & PHOTO UPLOAD) -->
                 <div id="view-profile" class="dashboard-view hidden space-y-5">
-                    <h2 class="text-lg font-bold text-navy-800 border-b border-gray-200 pb-3">Profil Pelatih</h2>
+                    <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                        <h2 class="text-lg font-bold text-slate-900">Profil Pelatih</h2>
+                        <button id="btn-edit-profile" onclick="toggleProfileEdit(true)" class="bg-slate-900 hover:bg-blue-950 text-white text-xs px-4 py-2 rounded-lg font-bold transition shadow-md">
+                            ✏️ Sunting Profil
+                        </button>
+                    </div>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="flex flex-col items-center border-b md:border-b-0 md:border-r border-gray-200 pb-4 md:pb-0 pr-0 md:pr-6">
-                            <div class="w-28 h-28 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 font-bold mb-3 border-2 border-navy-800">
-                                Gambar
+                    <form id="form-edit-profile" onsubmit="handleSaveProfile(event)" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                            <!-- Gambar Profil -->
+                            <div class="flex flex-col items-center border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 pr-0 md:pr-6">
+                                <div class="relative group w-32 h-32 mb-3">
+                                    <img id="prof-avatar-preview" src="https://via.placeholder.com/150?text=Foto+Pelatih" alt="Avatar" class="w-32 h-32 object-cover rounded-full border-4 border-slate-900 shadow-md">
+                                    <label for="prof-photo-input" class="absolute inset-0 bg-slate-900/70 text-white text-[10px] font-bold rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition cursor-pointer">
+                                        <span>📷 Tukar Foto</span>
+                                        <input type="file" id="prof-photo-input" accept="image/*" onchange="previewProfilePhoto(event)" class="hidden">
+                                    </label>
+                                </div>
+                                <p class="text-[10px] text-slate-400 mb-3 text-center">Klik foto untuk memuat naik gambar baru</p>
+
+                                <h3 id="prof-nama" class="font-bold text-slate-900 text-center text-sm uppercase"></h3>
+                                <p id="prof-badan" class="text-xs text-blue-900 font-mono mt-0.5 font-bold"></p>
                             </div>
-                            <h3 id="prof-nama" class="font-bold text-navy-800 text-center text-sm"></h3>
-                            <p id="prof-badan" class="text-xs text-gray-500 font-mono mt-0.5"></p>
+
+                            <!-- Form Medan Profil -->
+                            <div class="md:col-span-2 space-y-4 text-xs">
+
+                                <strong class="block text-slate-900 uppercase text-[10px] tracking-wider border-b pb-1">Maklumat Akademik & SUKSIS</strong>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Nama Penuh</label>
+                                        <input type="text" id="edit-nama" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">No. IC / Passport</label>
+                                        <input type="text" id="edit-ic" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Student ID</label>
+                                        <input type="text" id="edit-stuid" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Program Pengajian</label>
+                                        <input type="text" id="edit-prog" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Fakulti</label>
+                                        <input type="text" id="edit-fac" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Semester / Sesi</label>
+                                        <input type="text" id="edit-sem" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                </div>
+
+                                <strong class="block text-slate-900 uppercase text-[10px] tracking-wider border-b pb-1 pt-2">Maklumat Hubungan & Kediaman</strong>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div class="sm:col-span-2">
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Alamat Kediaman</label>
+                                        <input type="text" id="edit-addr" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">No. Telefon</label>
+                                        <input type="text" id="edit-phone" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Emel Rasmi</label>
+                                        <input type="email" id="edit-email" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">No. Kecemasan</label>
+                                        <input type="text" id="edit-sos" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 text-[10px] font-bold uppercase mb-1">Kolej Kediaman & Bilik</label>
+                                        <input type="text" id="edit-hostel" disabled class="prof-input w-full bg-slate-50 border border-slate-200 rounded p-2 text-slate-800 font-medium">
+                                    </div>
+                                </div>
+
+                                <div id="edit-actions" class="hidden pt-4 border-t border-slate-200 flex justify-end space-x-2">
+                                    <button type="button" onclick="toggleProfileEdit(false)" class="bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs px-4 py-2 rounded-lg font-bold transition">Batal</button>
+                                    <button type="submit" class="bg-slate-900 hover:bg-blue-950 text-white text-xs px-5 py-2 rounded-lg font-bold transition shadow-md">Simpan Perubahan</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 4. REKOD KEHADIRAN & KALENDAR -->
+                <div id="view-attendance" class="dashboard-view hidden space-y-5">
+                    <div class="border-b border-slate-200 pb-3">
+                        <h2 class="text-lg font-bold text-slate-900">Rekod Kehadiran</h2>
+                        <p class="text-xs text-slate-500">Pilih tarikh atau tarikh kalendar untuk menyemak log kehadiran latihan.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-5">
+
+                        <!-- Date Picker -->
+                        <div class="flex items-center space-x-3 text-xs">
+                            <label for="attendance-date-picker" class="font-bold text-slate-700">Tarikh:</label>
+                            <input type="date" id="attendance-date-picker" onchange="onDateInputChange(event)" value="2026-08-18" class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-1.5 text-slate-800 font-medium focus:ring-2 focus:ring-slate-900 focus:outline-none">
                         </div>
 
-                        <div class="md:col-span-2 space-y-4 text-xs">
-                            <div class="grid grid-cols-2 gap-3">
-                                <div><strong class="block text-gray-400 text-[10px]">NO. IC / PASSPORT:</strong> <span id="prof-ic" class="font-medium"></span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">STUDENT ID:</strong> <span id="prof-stuid" class="font-medium">2023110042</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">PROGRAMME:</strong> <span id="prof-prog" class="font-medium">Ijazah Sarjana Muda Kejuruteraan</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">FACULTY:</strong> <span id="prof-fac" class="font-medium">FTKEE</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">STATUS:</strong> <span class="text-emerald-600 font-bold">AKTIF</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">SEMESTER:</strong> <span class="font-medium">Semester 4 (2025/2026)</span></div>
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                            <!-- Widget Kalendar -->
+                            <div class="md:col-span-5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="flex justify-between items-center mb-3">
+                                    <button onclick="changeMonth(-1)" class="p-1 hover:bg-slate-200 text-slate-600 rounded font-bold text-sm transition">&lt;</button>
+                                    <span id="calendar-month-year" class="font-bold text-xs text-slate-800">Ogos 2026</span>
+                                    <button onclick="changeMonth(1)" class="p-1 hover:bg-slate-200 text-slate-600 rounded font-bold text-sm transition">&gt;</button>
+                                </div>
+
+                                <div class="grid grid-cols-7 text-center font-bold text-[10px] text-slate-500 mb-2">
+                                    <div>A</div>
+                                    <div>I</div>
+                                    <div>S</div>
+                                    <div>R</div>
+                                    <div>K</div>
+                                    <div>J</div>
+                                    <div>S</div>
+                                </div>
+
+                                <div id="calendar-days-grid" class="grid grid-cols-7 gap-1 text-center text-xs">
+                                    <!-- Dynamic Days -->
+                                </div>
                             </div>
 
-                            <hr class="border-gray-100">
-                            <h4 class="font-bold text-navy-800 uppercase text-[10px] tracking-wider">Contact Information</h4>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="col-span-2"><strong class="block text-gray-400 text-[10px]">ADDRESS:</strong> <span class="font-medium">Kolej Kediaman Pauh Putra, UniMAP</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">PHONE NUMBER:</strong> <span class="font-medium">012-3456789</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">EMAIL:</strong> <span class="font-medium">aimi@student.unimap.edu.my</span></div>
+                            <!-- Jadual Rekod -->
+                            <div class="md:col-span-7 overflow-x-auto">
+                                <table class="w-full text-xs text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-slate-200 text-slate-500 font-semibold">
+                                            <th class="py-2.5 px-2">Tarikh</th>
+                                            <th class="py-2.5 px-2">Masa</th>
+                                            <th class="py-2.5 px-2">Aktiviti</th>
+                                            <th class="py-2.5 px-2 text-center">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="user-attendance-table" class="divide-y divide-slate-100">
+                                        <!-- Dynamic Records -->
+                                    </tbody>
+                                </table>
                             </div>
 
-                            <hr class="border-gray-100">
-                            <h4 class="font-bold text-navy-800 uppercase text-[10px] tracking-wider">Emergency & Hostel</h4>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div><strong class="block text-gray-400 text-[10px]">EMERGENCY CONTACT:</strong> <span class="font-medium">019-8765432 (Noor Sulhi)</span></div>
-                                <div><strong class="block text-gray-400 text-[10px]">HOSTEL ROOM:</strong> <span id="prof-hostel" class="font-medium">KK Tan Sri Aishah Ghani (B-2-10)</span></div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="view-attendance" class="dashboard-view hidden space-y-4">
-                    <h2 class="text-lg font-bold text-navy-800 border-b border-gray-200 pb-3">Rekod Kehadiran & Jadual</h2>
-
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                        <table class="w-full text-xs text-left border-collapse">
-                            <thead>
-                                <tr class="bg-navy-800 text-white">
-                                    <th class="p-3">Tarikh</th>
-                                    <th class="p-3">Jenis Tugas / Latihan</th>
-                                    <th class="p-3">Masa Mula/Tamat</th>
-                                    <th class="p-3 text-center">Jumlah Jam</th>
-                                    <th class="p-3 text-center">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody id="user-attendance-table" class="divide-y divide-gray-100">
-                                <!-- Populated dynamically -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
+                <!-- 5. KEWANGAN & ELAUN -->
                 <div id="view-financial" class="dashboard-view hidden space-y-5">
-                    <h2 class="text-lg font-bold text-navy-800 border-b border-gray-200 pb-3">Kewangan & Elaun</h2>
+                    <h2 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-3">Kewangan & Elaun</h2>
 
-                    <!-- Auto-generated allowance dashboard -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Jam Latihan (Bulan Ini)</span>
-                            <h3 class="text-xl font-extrabold text-navy-800 mt-1" id="fin-total-hours">0 Jam</h3>
+                        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Jam Latihan (Bulan Ini)</span>
+                            <h3 class="text-xl font-extrabold text-slate-900 mt-1" id="fin-total-hours">0 Jam</h3>
                         </div>
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Kadar Elaun Jam</span>
-                            <h3 class="text-xl font-extrabold text-emerald-600 mt-1">RM 8.00 / Jam</h3>
+                        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Kadar Elaun Jam</span>
+                            <h3 class="text-xl font-extrabold text-blue-900 mt-1">RM 8.00 / Jam</h3>
                         </div>
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Tuntutan Elaun Terkumpul</span>
-                            <h3 class="text-xl font-extrabold text-amber-600 mt-1" id="fin-total-allowance">RM 0.00</h3>
+                        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Tuntutan Elaun Terkumpul</span>
+                            <h3 class="text-xl font-extrabold text-emerald-600 mt-1" id="fin-total-allowance">RM 0.00</h3>
                         </div>
                     </div>
 
-                    <!-- Payment Checklists -->
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 space-y-3">
-                        <h3 class="font-bold text-navy-800 text-xs uppercase tracking-wider">Status Pembayaran Yuran & Tabung</h3>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3">
+                        <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider">Status Pembayaran Yuran & Tabung</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-                            <div class="p-3 bg-slate-50 border rounded-lg"><strong>Tabung Skuad:</strong> <span class="text-emerald-600 font-bold block mt-0.5">LUNAS</span></div>
-                            <div class="p-3 bg-slate-50 border rounded-lg"><strong>Yuran Tauliah:</strong> <span class="text-gray-400 block mt-0.5">Tahun 2</span></div>
-                            <div class="p-3 bg-slate-50 border rounded-lg"><strong>SUKSIS Community:</strong> <span class="text-emerald-600 font-bold block mt-0.5">LUNAS</span></div>
-                            <div class="p-3 bg-slate-50 border rounded-lg"><strong>SUKSIS Outreach:</strong> <span class="text-emerald-600 font-bold block mt-0.5">LUNAS</span></div>
+                            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg"><strong>Tabung Skuad:</strong> <span class="text-emerald-600 font-bold block mt-0.5">LUNAS</span></div>
+                            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg"><strong>Yuran Tauliah:</strong> <span class="text-slate-500 block mt-0.5">Tahun 2</span></div>
+                            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg"><strong>SUKSIS Community:</strong> <span class="text-emerald-600 font-bold block mt-0.5">LUNAS</span></div>
+                            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg"><strong>SUKSIS Outreach:</strong> <span class="text-emerald-600 font-bold block mt-0.5">LUNAS</span></div>
                         </div>
                     </div>
 
-                    <!-- Printable Claim Slip Button -->
-                    <div class="flex justify-between items-center bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex justify-between items-center bg-white p-5 rounded-xl shadow-sm border border-slate-200">
                         <div>
-                            <h3 class="font-bold text-navy-800 text-sm">Penyata Slip Elaun (Lampiran 'A')</h3>
-                            <p class="text-xs text-gray-500">Penjanaan automatik Borang JPJKK/KSS/002/24 berdasarkan rekod kehadiran.</p>
+                            <h3 class="font-bold text-slate-900 text-sm">Penyata Slip Elaun (Lampiran 'A')</h3>
+                            <p class="text-xs text-slate-500">Penjanaan automatik Borang JPJKK/KSS/002/24 berdasarkan rekod kehadiran.</p>
                         </div>
-                        <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-4 py-2.5 rounded-lg font-bold transition shadow-sm">Cetak / Muat Turun Slip</button>
+                        <button onclick="window.print()" class="bg-slate-900 hover:bg-blue-950 text-white text-xs px-4 py-2.5 rounded-lg font-bold transition shadow-md">Cetak / Muat Turun Slip</button>
                     </div>
 
-                    <!-- LAMPIRAN A SLIP TEMPLATE (PRINTABLE) -->
-                    <div id="printable-slip" class="bg-white p-6 border-2 border-black text-[11px] font-sans leading-tight">
+                    <!-- LAMPIRAN A SLIP TEMPLATE -->
+                    <div id="printable-slip" class="bg-white text-black p-6 border-2 border-black text-[11px] font-sans leading-tight hidden">
                         <div class="text-right font-bold text-[10px]">LAMPIRAN 'A'<br>BORANG JPJKK/KSS/002/24</div>
                         <div class="text-center font-bold my-2 text-xs">
                             KOR SUKARELAWAN SIMPANAN POLIS SISWA/SISWI (KOR SUKSIS)<br>
                             UNIVERSITI : UNIVERSITI MALAYSIA PERLIS<br>
                             KONTINJEN : PERLIS<br>
-                            TUNTUTAN ELAUN PENUGASAN / LATIHAN BAGI BULAN : <span id="slip-month" class="underline">MEI 2025</span>
+                            TUNTUTAN ELAUN PENUGASAN / LATIHAN BAGI BULAN : <span id="slip-month" class="underline">OGOS 2026</span>
                         </div>
 
                         <div class="grid grid-cols-2 gap-2 my-3 border-t border-b border-black py-2">
@@ -339,10 +422,9 @@
                             </div>
                         </div>
 
-                        <!-- Table -->
                         <table class="w-full border-collapse border border-black text-center text-[10px] my-2">
                             <thead>
-                                <tr class="border-b border-black bg-gray-100">
+                                <tr class="border-b border-black bg-slate-100">
                                     <th class="border border-black p-1">BIL</th>
                                     <th class="border border-black p-1">TARIKH</th>
                                     <th class="border border-black p-1" colspan="2">MASA (MULA - TAMAT)</th>
@@ -355,7 +437,7 @@
                                 </tr>
                             </thead>
                             <tbody id="slip-table-body">
-                                <!-- Populated dynamically from attendance data -->
+                                <!-- Populated dynamically -->
                             </tbody>
                         </table>
 
@@ -379,39 +461,40 @@
                     </div>
                 </div>
 
+                <!-- 6. SIJIL TAULIAH -->
                 <div id="view-tauliah" class="dashboard-view hidden space-y-4">
-                    <h2 class="text-lg font-bold text-navy-800 border-b border-gray-200 pb-3">Sijil Tauliah</h2>
-                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
-                        <div class="w-16 h-16 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-2xl border border-amber-200">🏆</div>
-                        <h3 class="text-base font-bold text-navy-800">Sijil Tauliah Inspektor Sukarelawan Polis</h3>
-                        <p class="text-xs text-gray-500 max-w-md mx-auto mt-1 mb-5">Surat dan Sijil Tauliah Rasmi hanya akan dibuka untuk dimuat turun selepas pelatih menamatkan keseluruhan kursus 3 Tahun Kor SUKSIS.</p>
-                        <button disabled class="bg-gray-100 text-gray-400 text-xs px-4 py-2.5 rounded-lg font-bold cursor-not-allowed">Surat Belum Dijana (Dalam Perkembangan)</button>
+                    <h2 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-3">Sijil Tauliah</h2>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
+                        <div class="w-16 h-16 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-2xl border border-blue-200">📜</div>
+                        <h3 class="text-base font-bold text-slate-900">Sijil Tauliah Inspektor Sukarelawan Polis</h3>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto mt-1 mb-5">Surat dan Sijil Tauliah Rasmi hanya akan dibuka untuk dimuat turun selepas pelatih menamatkan keseluruhan kursus 3 Tahun Kor SUKSIS.</p>
+                        <button disabled class="bg-slate-100 text-slate-400 text-xs px-4 py-2.5 rounded-lg font-bold cursor-not-allowed border border-slate-200">Surat Belum Dijana (Dalam Perkembangan)</button>
                     </div>
                 </div>
 
-                <!-- ADVANCED USER: LANTIKAN ROLLCALL ATTENDANCE SYSTEM -->
+                <!-- 7. ROLLCALL (AKSES KHAS) -->
                 <div id="view-adv-attendance" class="dashboard-view hidden space-y-4">
-                    <div class="bg-navy-800 text-white p-5 rounded-xl shadow-md flex justify-between items-center">
+                    <div class="bg-slate-900 text-white p-5 rounded-xl shadow-md flex justify-between items-center border border-slate-800">
                         <div>
                             <h2 class="text-base font-bold">Pengambilan Kehadiran (Akses Lantikan)</h2>
-                            <p class="text-xs text-slate-300">Borang khas pengambilan kehadiran pelatih mengikut kolej kediaman.</p>
+                            <p class="text-xs text-sky-200">Borang khas pengambilan kehadiran pelatih mengikut kolej kediaman.</p>
                         </div>
-                        <span class="bg-gold-500 text-navy-900 font-black px-2.5 py-1 rounded text-[10px] uppercase">Akses Khas</span>
+                        <span class="bg-sky-500/20 text-sky-200 border border-sky-400/30 font-black px-2.5 py-1 rounded text-[10px] uppercase">Akses Khas</span>
                     </div>
 
-                    <form onsubmit="handleAdvAttendanceSubmit(event)" class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 space-y-4">
+                    <form onsubmit="handleAdvAttendanceSubmit(event)" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                             <div>
-                                <label class="block font-bold text-gray-700 mb-1.5">1. PILIH KOLEJ KEDIAMAN</label>
-                                <select id="adv-hostel" class="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-navy-800 bg-white">
+                                <label class="block font-bold text-slate-700 mb-1.5">1. PILIH KOLEJ KEDIAMAN</label>
+                                <select id="adv-hostel" class="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg p-2.5 focus:ring-2 focus:ring-slate-900">
                                     <option value="KK Tan Sri Aishah Ghani">KK Tan Sri Aishah Ghani</option>
                                     <option value="KK Wang Ulu">KK Wang Ulu</option>
                                     <option value="KK Seri Abidin">KK Seri Abidin</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block font-bold text-gray-700 mb-1.5">2. PILIH JENIS LATIHAN / ROLLCALL</label>
-                                <select id="adv-type" class="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-navy-800 bg-white">
+                                <label class="block font-bold text-slate-700 mb-1.5">2. PILIH JENIS LATIHAN / ROLLCALL</label>
+                                <select id="adv-type" class="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg p-2.5 focus:ring-2 focus:ring-slate-900">
                                     <option value="Rollcall Malam">Rollcall Malam</option>
                                     <option value="Latihan Kawad">Latihan Kawad</option>
                                     <option value="Latihan Senjata">Latihan Senjata</option>
@@ -421,25 +504,23 @@
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-gray-700 mb-2">3. PILIH SENARAI PELATIH (TICK JIKA HADIR)</label>
-                            <div class="border border-gray-200 rounded-lg p-3 space-y-2 max-h-48 overflow-y-auto text-xs bg-slate-50" id="adv-pelatih-checkboxes">
-                                <!-- Dynamic check list -->
+                            <label class="block text-xs font-bold text-slate-700 mb-2">3. PILIH SENARAI PELATIH (TICK JIKA HADIR)</label>
+                            <div class="border border-slate-200 rounded-lg p-3 space-y-2 max-h-48 overflow-y-auto text-xs bg-slate-50" id="adv-pelatih-checkboxes">
+                                <!-- Dynamic checkboxes -->
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold py-2.5 rounded-lg text-xs transition shadow-sm">4. HANTAR REKOD KEHADIRAN KE ADMIN</button>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-blue-950 text-white font-bold py-2.5 rounded-lg text-xs transition shadow-md">4. HANTAR REKOD KEHADIRAN KE ADMIN</button>
                     </form>
                 </div>
 
-
-                <!-- ================= ADMIN 1 & ADMIN 2 VIEWS ================= -->
-
+                <!-- 8. PANEL ADMIN / JL -->
                 <div id="view-admin-dashboard" class="dashboard-view hidden space-y-5">
-                    <div class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h2 class="text-lg font-bold text-navy-800" id="admin-title">Panel Pentadbiran Kor SUKSIS</h2>
+                    <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                        <h2 class="text-lg font-bold text-slate-900" id="admin-title">Panel Pentadbiran Kor SUKSIS</h2>
                         <div class="flex items-center space-x-2">
-                            <label class="text-xs font-semibold">Skuad:</label>
-                            <select id="admin-skuad-filter" onchange="filterAdminData()" class="border border-gray-300 rounded-lg text-xs p-1.5 bg-white font-bold text-navy-800">
+                            <label class="text-xs font-semibold text-slate-600">Skuad:</label>
+                            <select id="admin-skuad-filter" onchange="filterAdminData()" class="border border-slate-300 rounded-lg text-xs p-1.5 bg-white font-bold text-slate-800">
                                 <option value="ALL">Semua Skuad</option>
                                 <option value="JR">Skuad Junior</option>
                                 <option value="INTER">Skuad Intermediate</option>
@@ -448,33 +529,31 @@
                         </div>
                     </div>
 
-                    <!-- Admin Quick Stats -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Jumlah Pelatih</span>
-                            <p class="text-xl font-bold text-navy-800 mt-1" id="stat-total-pelatih">0</p>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Jumlah Pelatih</span>
+                            <p class="text-xl font-bold text-slate-900 mt-1" id="stat-total-pelatih">0</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Purata Kehadiran</span>
-                            <p class="text-xl font-bold text-blue-600 mt-1" id="stat-avg-att">94%</p>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Purata Kehadiran</span>
+                            <p class="text-xl font-bold text-blue-900 mt-1" id="stat-avg-att">94%</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Elaun Dikeluarkan</span>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Elaun Dikeluarkan</span>
                             <p class="text-xl font-bold text-emerald-600 mt-1" id="stat-total-elaun">RM 0.00</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Status Tuntutan</span>
-                            <p class="text-xl font-bold text-amber-600 mt-1">Disemak</p>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Status Tuntutan</span>
+                            <p class="text-xl font-bold text-slate-700 mt-1">Disemak</p>
                         </div>
                     </div>
 
-                    <!-- Data Skuad Table -->
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
-                        <h3 class="font-bold text-navy-800 text-xs uppercase tracking-wider mb-3">Senarai Pelatih & Pengurusan Akses</h3>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-3">Senarai Pelatih & Pengurusan Akses</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full text-xs text-left border-collapse">
                                 <thead>
-                                    <tr class="bg-navy-800 text-white">
+                                    <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
                                         <th class="p-2.5">No Badan</th>
                                         <th class="p-2.5">Nama</th>
                                         <th class="p-2.5">Skuad</th>
@@ -484,38 +563,36 @@
                                         <th class="p-2.5 text-center" id="th-admin-action">Akses Lantikan Rollcall</th>
                                     </tr>
                                 </thead>
-                                <tbody id="admin-squad-table" class="divide-y divide-gray-100">
+                                <tbody id="admin-squad-table" class="divide-y divide-slate-200">
                                     <!-- Dynamic rows -->
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    <!-- Warning Letter Creator -->
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
-                        <h3 class="font-bold text-navy-800 text-xs uppercase tracking-wider mb-3">Penjanaan Surat Amaran (Warning Letter)</h3>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-3">Penjanaan Surat Amaran (Warning Letter)</h3>
                         <form id="form-warning-letter" onsubmit="handleSendWarning(event)" class="space-y-3">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                                 <div>
-                                    <label class="block font-semibold mb-1 text-gray-600">Pilih Pelatih:</label>
-                                    <select id="warn-pelatih-select" class="w-full border rounded-lg p-2 bg-white border-gray-300"></select>
+                                    <label class="block font-semibold mb-1 text-slate-700">Pilih Pelatih:</label>
+                                    <select id="warn-pelatih-select" class="w-full border rounded-lg p-2 bg-slate-50 border-slate-300 text-slate-900"></select>
                                 </div>
                                 <div>
-                                    <label class="block font-semibold mb-1 text-gray-600">Sebab / Jenis Amaran:</label>
-                                    <input type="text" id="warn-reason" placeholder="Tidak hadir Rollcall tanpa sebab" required class="w-full border rounded-lg p-2 border-gray-300">
+                                    <label class="block font-semibold mb-1 text-slate-700">Sebab / Jenis Amaran:</label>
+                                    <input type="text" id="warn-reason" placeholder="Tidak hadir Rollcall tanpa sebab" required class="w-full border rounded-lg p-2 bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400">
                                 </div>
                             </div>
-                            <button id="btn-send-warning" type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition">Hantar Surat Amaran Kebajikan Pelatih</button>
+                            <button id="btn-send-warning" type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition shadow-md">Hantar Surat Amaran Kebajikan Pelatih</button>
                         </form>
                     </div>
 
-                    <!-- Announcement Generator (Admin 1 Only) -->
-                    <div id="admin-announcement-section" class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
-                        <h3 class="font-bold text-navy-800 text-xs uppercase tracking-wider mb-3">Cipta Pengumuman Baru (Home)</h3>
+                    <div id="admin-announcement-section" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-3">Cipta Pengumuman Baru (Home)</h3>
                         <form onsubmit="handleCreateAnnouncement(event)" class="space-y-3 text-xs">
-                            <input type="text" id="ann-title" placeholder="Tajuk Pengumuman" required class="w-full border rounded-lg p-2.5 border-gray-300">
-                            <textarea id="ann-content" placeholder="Kandungan pengumuman..." required class="w-full border rounded-lg p-2.5 border-gray-300 h-20"></textarea>
-                            <button type="submit" class="bg-navy-800 hover:bg-navy-900 text-white font-bold px-4 py-2 rounded-lg transition">Siarkan Pengumuman</button>
+                            <input type="text" id="ann-title" placeholder="Tajuk Pengumuman" required class="w-full border rounded-lg p-2.5 bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400">
+                            <textarea id="ann-content" placeholder="Kandungan pengumuman..." required class="w-full border rounded-lg p-2.5 bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400 h-20"></textarea>
+                            <button type="submit" class="bg-slate-900 hover:bg-blue-950 text-white font-bold px-4 py-2 rounded-lg transition shadow-md">Siarkan Pengumuman</button>
                         </form>
                     </div>
                 </div>
@@ -532,21 +609,22 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // DATA STATE STORE
+        // STATE UTAMA
         const state = {
             currentUser: null,
             users: [
                 {
                     badan: "KS 65816",
                     ic: "040925020246",
-                    nama: "AIMI RASYIDAH BINTI NOOR SULHI",
+                    nama: "MOHAMMAD FIRDAUS BIN BUSTAM",
                     skuad: "JR",
                     hostel: "KK Tan Sri Aishah Ghani",
+                    avatar: "https://via.placeholder.com/150?text=Firdaus",
                     isAdvUser: true,
                     attendance: [
-                        { date: "2025-05-03", type: "Latihan Kawad", start: "08:00", end: "12:00", hours: 4, sdIn: "SD1", sdOut: "SD1" },
-                        { date: "2025-05-10", type: "Latihan Senjata", start: "08:00", end: "16:00", hours: 8, sdIn: "SD1", sdOut: "SD1" },
-                        { date: "2025-05-17", type: "Rollcall Malam", start: "20:00", end: "22:00", hours: 2, sdIn: "SD2", sdOut: "SD2" }
+                        { date: "2026-08-18", time: "08:00 AM", activity: "Latihan Kawad", status: "Hadir", hours: 4, start: "08:00", end: "12:00", sdIn: "SD1", sdOut: "SD1" },
+                        { date: "2026-08-11", time: "02:00 PM", activity: "Teori Perundangan", status: "Hadir", hours: 3, start: "14:00", end: "17:00", sdIn: "SD1", sdOut: "SD1" },
+                        { date: "2026-08-04", time: "08:00 AM", activity: "Latihan Senjata", status: "Tidak Hadir", hours: 0, start: "-", end: "-", sdIn: "-", sdOut: "-" }
                     ],
                     warnings: []
                 },
@@ -556,55 +634,48 @@
                     nama: "MUHAMMAD FARHAN BIN AZMAN",
                     skuad: "INTER",
                     hostel: "KK Wang Ulu",
+                    avatar: null,
                     isAdvUser: false,
                     attendance: [
-                        { date: "2025-05-03", type: "Latihan Kawad", start: "08:00", end: "12:00", hours: 4, sdIn: "SD1", sdOut: "SD1" }
+                        { date: "2026-08-18", time: "08:00 AM", activity: "Latihan Kawad", status: "Hadir", hours: 4, start: "08:00", end: "12:00", sdIn: "SD1", sdOut: "SD1" }
                     ],
-                    warnings: ["Surat Amaran 1: Ketidakhadiran Kawad Tanpa Sebab (02 Mei)"]
-                },
-                {
-                    badan: "KS 65818",
-                    ic: "020101091234",
-                    nama: "SITI NURHALIZA BINTI ZAKARIA",
-                    skuad: "SENIOR",
-                    hostel: "KK Seri Abidin",
-                    isAdvUser: false,
-                    attendance: [
-                        { date: "2025-05-03", type: "Latihan Kawad", start: "08:00", end: "16:00", hours: 8, sdIn: "SD1", sdOut: "SD1" },
-                        { date: "2025-05-10", type: "Kursus Etika", start: "08:00", end: "17:00", hours: 9, sdIn: "SD1", sdOut: "SD1" }
-                    ],
-                    warnings: []
+                    warnings: ["Surat Amaran 1: Ketidakhadiran Kawad Tanpa Sebab"]
                 }
             ],
             announcements: [
                 { title: "Perhimpunan Bulanan Kor SUKSIS UniMAP", date: "2026-08-10", content: "Semua pelatih Skuad Junior, Intermediate, dan Senior diwajibkan melapor diri di Padang Kawad Pauh Putra pada jam 0730 hrs." },
-                { title: "Pemakluman Tuntutan Elaun Latihan Mei 2025", date: "2026-08-01", content: "Sila semak slip tuntutan elaun masing-masing di bahagian kewangan sebelum tarikh akhir pengesahan." }
+                { title: "Pemakluman Tuntutan Elaun Latihan Ogos 2026", date: "2026-08-01", content: "Sila semak slip tuntutan elaun masing-masing di bahagian kewangan sebelum tarikh akhir pengesahan." }
             ]
         };
 
-        // LOGIN TAB SWITCHING
+        // VARIABLES KALENDAR & PROFIL
+        let currentCalDate = new Date(2026, 7, 18);
+        let selectedDateStr = "2026-08-18";
+        let uploadedPhotoData = null;
+
+        // TUKAR TAB LOG MASUK
         function switchLoginTab(tab) {
             document.getElementById('form-login-pelatih').classList.add('hidden');
             document.getElementById('form-login-pegawai').classList.add('hidden');
             document.getElementById('form-register').classList.add('hidden');
 
-            document.getElementById('tab-pelatih').className = "flex-1 py-2.5 text-center rounded-lg transition-all hover:text-navy-800";
-            document.getElementById('tab-pegawai').className = "flex-1 py-2.5 text-center rounded-lg transition-all hover:text-navy-800";
-            document.getElementById('tab-register').className = "flex-1 py-2.5 text-center rounded-lg transition-all hover:text-navy-800";
+            document.getElementById('tab-pelatih').className = "flex-1 py-2.5 text-center rounded-lg transition-all hover:text-slate-900";
+            document.getElementById('tab-pegawai').className = "flex-1 py-2.5 text-center rounded-lg transition-all hover:text-slate-900";
+            document.getElementById('tab-register').className = "flex-1 py-2.5 text-center rounded-lg transition-all hover:text-slate-900";
 
             if (tab === 'pelatih') {
                 document.getElementById('form-login-pelatih').classList.remove('hidden');
-                document.getElementById('tab-pelatih').className = "flex-1 py-2.5 text-center rounded-lg transition-all text-navy-800 font-bold bg-white shadow-sm";
+                document.getElementById('tab-pelatih').className = "flex-1 py-2.5 text-center rounded-lg transition-all text-slate-900 font-bold bg-white shadow-sm";
             } else if (tab === 'pegawai') {
                 document.getElementById('form-login-pegawai').classList.remove('hidden');
-                document.getElementById('tab-pegawai').className = "flex-1 py-2.5 text-center rounded-lg transition-all text-navy-800 font-bold bg-white shadow-sm";
+                document.getElementById('tab-pegawai').className = "flex-1 py-2.5 text-center rounded-lg transition-all text-slate-900 font-bold bg-white shadow-sm";
             } else {
                 document.getElementById('form-register').classList.remove('hidden');
-                document.getElementById('tab-register').className = "flex-1 py-2.5 text-center rounded-lg transition-all text-navy-800 font-bold bg-white shadow-sm";
+                document.getElementById('tab-register').className = "flex-1 py-2.5 text-center rounded-lg transition-all text-slate-900 font-bold bg-white shadow-sm";
             }
         }
 
-        // HANDLERS FOR LOGIN & REGISTER
+        // HANDLERS LOG MASUK / REGISTER
         function handleLoginPelatih(e) {
             e.preventDefault();
             const badan = document.getElementById('login-badan').value.trim();
@@ -654,6 +725,7 @@
                 nama: nama.toUpperCase(),
                 skuad: skuad,
                 hostel: "KK Tan Sri Aishah Ghani",
+                avatar: null,
                 isAdvUser: false,
                 attendance: [],
                 warnings: []
@@ -670,7 +742,7 @@
             document.getElementById('user-status-bar').classList.add('hidden');
         }
 
-        // INITIALIZE DASHBOARD BASED ON ROLE
+        // INITIALIZE DASHBOARD
         function initDashboard() {
             document.getElementById('page-login').classList.add('hidden');
             document.getElementById('app-dashboard').classList.remove('hidden');
@@ -685,6 +757,8 @@
 
             if (state.currentUser.role === 'PELATIH') {
                 loadPelatihData();
+                renderCalendar();
+                renderAttendanceTable();
                 showView('view-home');
             } else {
                 setupAdminDashboard();
@@ -692,7 +766,7 @@
             }
         }
 
-        // NAVIGATION BUILDER
+        // NAVIGASI
         function setupNavigation() {
             const nav = document.getElementById('nav-links');
             nav.innerHTML = '';
@@ -712,10 +786,10 @@
                 }
 
                 items.forEach(item => {
-                    nav.innerHTML += `<button onclick="showView('${item.id}')" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-white/10 transition block">${item.label}</button>`;
+                    nav.innerHTML += `<button onclick="showView('${item.id}')" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-800 transition block text-slate-200">${item.label}</button>`;
                 });
             } else {
-                nav.innerHTML = `<button onclick="showView('view-admin-dashboard')" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-white/10 transition block">Panel Pentadbiran</button>`;
+                nav.innerHTML = `<button onclick="showView('view-admin-dashboard')" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-800 transition block text-slate-200">Panel Pentadbiran</button>`;
             }
         }
 
@@ -724,66 +798,120 @@
             document.getElementById(viewId).classList.remove('hidden');
         }
 
-        // RENDER ANNOUNCEMENTS
         function renderAnnouncements() {
             const list = document.getElementById('announcement-list');
             list.innerHTML = state.announcements.map(a => `
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 border-l-4 border-l-navy-800">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 border-l-4 border-l-slate-900">
                     <div class="flex justify-between items-center mb-1">
-                        <h4 class="font-bold text-navy-800 text-xs sm:text-sm">${a.title}</h4>
-                        <span class="text-[10px] text-gray-400 font-mono">${a.date}</span>
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-sm">${a.title}</h4>
+                        <span class="text-[10px] text-slate-400 font-mono">${a.date}</span>
                     </div>
-                    <p class="text-xs text-gray-600 leading-relaxed">${a.content}</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">${a.content}</p>
                 </div>
             `).join('');
         }
 
-        // POPULATE PELATIH VIEWS & SLIP ELAUN
+        // EDIT & PHOTO PROFIL
+        function previewProfilePhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedPhotoData = e.target.result;
+                    document.getElementById('prof-avatar-preview').src = uploadedPhotoData;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function toggleProfileEdit(enable = true) {
+            const isEditing = enable;
+            const inputs = document.querySelectorAll('.prof-input');
+
+            inputs.forEach(input => {
+                if (isEditing) {
+                    input.removeAttribute('disabled');
+                    input.classList.remove('bg-slate-50', 'border-slate-200');
+                    input.classList.add('bg-white', 'border-slate-900', 'ring-1', 'ring-slate-900');
+                } else {
+                    input.setAttribute('disabled', 'true');
+                    input.classList.add('bg-slate-50', 'border-slate-200');
+                    input.classList.remove('bg-white', 'border-slate-900', 'ring-1', 'ring-slate-900');
+                }
+            });
+
+            if (isEditing) {
+                document.getElementById('edit-actions').classList.remove('hidden');
+                document.getElementById('btn-edit-profile').classList.add('hidden');
+            } else {
+                document.getElementById('edit-actions').classList.add('hidden');
+                document.getElementById('btn-edit-profile').classList.remove('hidden');
+            }
+        }
+
+        function handleSaveProfile(e) {
+            e.preventDefault();
+            const u = state.currentUser;
+
+            u.nama = document.getElementById('edit-nama').value.toUpperCase();
+            u.ic = document.getElementById('edit-ic').value;
+            u.studentId = document.getElementById('edit-stuid').value;
+            u.prog = document.getElementById('edit-prog').value;
+            u.fac = document.getElementById('edit-fac').value;
+            u.sem = document.getElementById('edit-sem').value;
+            u.addr = document.getElementById('edit-addr').value;
+            u.phone = document.getElementById('edit-phone').value;
+            u.email = document.getElementById('edit-email').value;
+            u.sosPhone = document.getElementById('edit-sos').value;
+            u.hostel = document.getElementById('edit-hostel').value;
+
+            if (uploadedPhotoData) {
+                u.avatar = uploadedPhotoData;
+            }
+
+            alert('Maklumat profil berjaya dikemaskini!');
+            toggleProfileEdit(false);
+            loadPelatihData();
+        }
+
         function loadPelatihData() {
             const u = state.currentUser;
 
-            // Profile
+            // Foto
+            const photoSrc = u.avatar || 'https://via.placeholder.com/150?text=Foto';
+            document.getElementById('prof-avatar-preview').src = photoSrc;
+            document.getElementById('vcard-avatar').src = photoSrc;
+
+            // Info Profil
             document.getElementById('prof-nama').innerText = u.nama;
             document.getElementById('prof-badan').innerText = u.badan;
-            document.getElementById('prof-ic').innerText = u.ic;
-            document.getElementById('prof-hostel').innerText = u.hostel;
+
+            // Edit Inputs
+            document.getElementById('edit-nama').value = u.nama || '';
+            document.getElementById('edit-ic').value = u.ic || '';
+            document.getElementById('edit-stuid').value = u.studentId || '2023110042';
+            document.getElementById('edit-prog').value = u.prog || 'Ijazah Sarjana Muda Kejuruteraan';
+            document.getElementById('edit-fac').value = u.fac || 'FTKEE';
+            document.getElementById('edit-sem').value = u.sem || 'Semester 4 (2025/2026)';
+            document.getElementById('edit-addr').value = u.addr || 'Kolej Kediaman Pauh Putra, UniMAP';
+            document.getElementById('edit-phone').value = u.phone || '012-3456789';
+            document.getElementById('edit-email').value = u.email || 'aimi@student.unimap.edu.my';
+            document.getElementById('edit-sos').value = u.sosPhone || '019-8765432 (Noor Sulhi)';
+            document.getElementById('edit-hostel').value = u.hostel || 'KK Tan Sri Aishah Ghani (B-2-10)';
 
             // V-Card
             document.getElementById('vcard-name').innerText = u.nama;
             document.getElementById('vcard-badan').innerText = `NO BADAN: ${u.badan}`;
             document.getElementById('vcard-skuad').innerText = u.skuad;
 
-            // Warnings
-            const warnBox = document.getElementById('user-warning-list');
-            if (u.warnings.length > 0) {
-                warnBox.innerHTML = u.warnings.map(w => `<p class="text-red-600 font-bold mb-1">• ${w}</p>`).join('');
-            } else {
-                warnBox.innerHTML = `<p class="text-emerald-600">Tiada surat amaran dikeluarkan setakat ini.</p>`;
-            }
-
-            // Attendance & Financial Calculations
+            // Slip Elaun & Kewangan
             let totalHours = 0;
-            const attTable = document.getElementById('user-attendance-table');
             const slipTable = document.getElementById('slip-table-body');
-
-            attTable.innerHTML = '';
             slipTable.innerHTML = '';
 
             u.attendance.forEach((att, idx) => {
-                totalHours += att.hours;
+                if (att.status === "Hadir") totalHours += att.hours;
 
-                // Attendance Tab Row
-                attTable.innerHTML += `
-                    <tr class="hover:bg-slate-50 transition">
-                        <td class="p-3 font-mono">${att.date}</td>
-                        <td class="p-3 font-semibold text-navy-800">${att.type}</td>
-                        <td class="p-3">${att.start} - ${att.end}</td>
-                        <td class="p-3 text-center font-bold">${att.hours} Jam</td>
-                        <td class="p-3 text-center"><span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full font-bold">HADIR</span></td>
-                    </tr>
-                `;
-
-                // Lampiran A Printable Slip Row
                 const elaunRM = (att.hours * 8.00).toFixed(2);
                 slipTable.innerHTML += `
                     <tr>
@@ -791,9 +919,9 @@
                         <td class="border border-black p-1">${att.date}</td>
                         <td class="border border-black p-1">${att.start}</td>
                         <td class="border border-black p-1">${att.end}</td>
-                        <td class="border border-black p-1 text-left">${att.type}</td>
-                        <td class="border border-black p-1">${att.sdIn}</td>
-                        <td class="border border-black p-1">${att.sdOut}</td>
+                        <td class="border border-black p-1 text-left">${att.activity}</td>
+                        <td class="border border-black p-1">${att.sdIn || '-'}</td>
+                        <td class="border border-black p-1">${att.sdOut || '-'}</td>
                         <td class="border border-black p-1 font-bold">${att.hours}</td>
                         <td class="border border-black p-1">RM 8.00</td>
                         <td class="border border-black p-1 font-bold">RM ${elaunRM}</td>
@@ -801,8 +929,7 @@
                 `;
             });
 
-            // Fill empty slip rows up to 10 for official look
-            for (let i = u.attendance.length + 1; i <= 10; i++) {
+            for (let i = u.attendance.length + 1; i <= 8; i++) {
                 slipTable.innerHTML += `
                     <tr>
                         <td class="border border-black p-1">${i}</td>
@@ -823,51 +950,120 @@
             document.getElementById('fin-total-hours').innerText = `${totalHours} Jam`;
             document.getElementById('fin-total-allowance').innerText = `RM ${totalAllowance.toFixed(2)}`;
 
-            // Footer of Slip
-            slipTable.innerHTML += `
-                <tr class="font-bold bg-gray-50">
-                    <td colspan="7" class="border border-black p-1 text-right">JUMLAH JAM DITUNTUT / ELAUN RM:</td>
-                    <td class="border border-black p-1">${totalHours} JAM</td>
-                    <td class="border border-black p-1">JUMLAH</td>
-                    <td class="border border-black p-1">RM ${totalAllowance.toFixed(2)}</td>
-                </tr>
-            `;
-
-            // Slip Header Details
             document.getElementById('slip-badan').innerText = u.badan;
             document.getElementById('slip-nama').innerText = u.nama;
             document.getElementById('slip-ic').innerText = u.ic;
+        }
 
-            // Setup Lantikan Rollcall Checkboxes if Adv User
-            if (u.isAdvUser) {
-                const checkContainer = document.getElementById('adv-pelatih-checkboxes');
-                checkContainer.innerHTML = state.users.map(p => `
-                    <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border border-gray-200">
-                        <input type="checkbox" value="${p.badan}" class="rounded text-navy-800 focus:ring-navy-800">
-                        <span><strong>${p.nama}</strong> (${p.badan} - ${p.hostel})</span>
-                    </label>
-                `).join('');
+        // KALENDAR & REKOD KEHADIRAN
+        function onDateInputChange(e) {
+            selectedDateStr = e.target.value;
+            if (selectedDateStr) {
+                const parts = selectedDateStr.split('-');
+                currentCalDate = new Date(parts[0], parts[1] - 1, parts[2]);
+                renderCalendar();
+                renderAttendanceTable();
             }
         }
 
-        // ADVANCED USER ATTENDANCE SUBMIT HANDLER
+        function changeMonth(offset) {
+            currentCalDate.setMonth(currentCalDate.getMonth() + offset);
+            renderCalendar();
+        }
+
+        function selectCalendarDay(day) {
+            const year = currentCalDate.getFullYear();
+            const month = String(currentCalDate.getMonth() + 1).padStart(2, '0');
+            const dayStr = String(day).padStart(2, '0');
+
+            selectedDateStr = `${year}-${month}-${dayStr}`;
+            document.getElementById('attendance-date-picker').value = selectedDateStr;
+
+            renderCalendar();
+            renderAttendanceTable();
+        }
+
+        function renderCalendar() {
+            const monthNames = ["Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"];
+            const year = currentCalDate.getFullYear();
+            const month = currentCalDate.getMonth();
+
+            document.getElementById('calendar-month-year').innerText = `${monthNames[month]} ${year}`;
+
+            const firstDayIndex = new Date(year, month, 1).getDay();
+            const totalDays = new Date(year, month + 1, 0).getDate();
+
+            const grid = document.getElementById('calendar-days-grid');
+            grid.innerHTML = '';
+
+            for (let i = 0; i < firstDayIndex; i++) {
+                grid.innerHTML += `<div></div>`;
+            }
+
+            for (let day = 1; day <= totalDays; day++) {
+                const dayFormatted = String(day).padStart(2, '0');
+                const monthFormatted = String(month + 1).padStart(2, '0');
+                const thisDateStr = `${year}-${monthFormatted}-${dayFormatted}`;
+
+                const isSelected = thisDateStr === selectedDateStr;
+
+                let btnClass = "w-7 h-7 flex items-center justify-center rounded-lg font-medium mx-auto transition cursor-pointer hover:bg-slate-200 ";
+                if (isSelected) {
+                    btnClass += "bg-slate-900 text-white font-bold shadow-md";
+                } else {
+                    btnClass += "text-slate-700 hover:text-slate-900";
+                }
+
+                grid.innerHTML += `<div onclick="selectCalendarDay(${day})" class="${btnClass}">${day}</div>`;
+            }
+        }
+
+        function renderAttendanceTable() {
+            const tbody = document.getElementById('user-attendance-table');
+            tbody.innerHTML = '';
+
+            const attList = state.currentUser ? state.currentUser.attendance : [];
+
+            attList.forEach(rec => {
+                const [y, m, d] = rec.date.split('-');
+                const displayDate = `${d}/${m}/${y}`;
+
+                const isHadir = rec.status === "Hadir";
+                const statusBadge = isHadir
+                    ? `<span class="bg-blue-100 text-blue-700 font-bold px-3 py-1 rounded-full text-[10px]">Hadir</span>`
+                    : `<span class="bg-red-100 text-red-600 font-bold px-2.5 py-1 rounded-full text-[10px]">Tidak Hadir</span>`;
+
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50 transition border-b border-slate-100">
+                        <td class="py-3 px-2 font-medium text-slate-800">${displayDate}</td>
+                        <td class="py-3 px-2 text-slate-600 font-medium">${rec.time}</td>
+                        <td class="py-3 px-2 font-semibold text-slate-900">${rec.activity}</td>
+                        <td class="py-3 px-2 text-center">${statusBadge}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        // ROLLCALL SUBMIT HANDLER
         function handleAdvAttendanceSubmit(e) {
             e.preventDefault();
             const hostel = document.getElementById('adv-hostel').value;
             const type = document.getElementById('adv-type').value;
             const checkedBoxes = document.querySelectorAll('#adv-pelatih-checkboxes input[type="checkbox"]:checked');
 
-            const dateToday = new Date().toISOString().split('T')[0];
+            const dateToday = "2026-08-18";
 
             checkedBoxes.forEach(cb => {
                 const targetUser = state.users.find(u => u.badan === cb.value);
                 if (targetUser) {
                     targetUser.attendance.push({
                         date: dateToday,
-                        type: `${type} (${hostel})`,
+                        time: "08:00 PM",
+                        activity: `${type} (${hostel})`,
+                        status: "Hadir",
+                        hours: 2,
                         start: "20:00",
                         end: "22:00",
-                        hours: 2,
                         sdIn: "SD1",
                         sdOut: "SD1"
                     });
@@ -876,9 +1072,10 @@
 
             alert(`Kehadiran bagi ${checkedBoxes.length} pelatih di ${hostel} berjaya dihantar ke Sistem Admin!`);
             loadPelatihData();
+            renderAttendanceTable();
         }
 
-        // SETUP ADMIN PANEL (ADMIN 1 vs ADMIN 2)
+        // PANEL ADMIN
         function setupAdminDashboard() {
             const isAdmin1 = state.currentUser.role === 'ADMIN1';
 
@@ -886,7 +1083,6 @@
                 ? "Panel Pentadbiran Pegawai Kor SUKSIS"
                 : `Panel Jurulatih Skuad (${state.currentUser.assignedSkuad})`;
 
-            // Restrict Skuad filter for Jurulatih
             const filterSelect = document.getElementById('admin-skuad-filter');
             if (!isAdmin1) {
                 filterSelect.value = state.currentUser.assignedSkuad;
@@ -895,7 +1091,6 @@
                 filterSelect.disabled = false;
             }
 
-            // Hide/Show Admin 1 specific controls
             document.getElementById('th-admin-action').style.display = isAdmin1 ? '' : 'none';
             document.getElementById('admin-announcement-section').style.display = isAdmin1 ? 'block' : 'none';
 
@@ -911,17 +1106,15 @@
                 filteredUsers = state.users.filter(u => u.skuad === filter);
             }
 
-            // Update Stats
             document.getElementById('stat-total-pelatih').innerText = filteredUsers.length;
 
             let totalElaunAll = 0;
             filteredUsers.forEach(u => {
-                const hrs = u.attendance.reduce((sum, a) => sum + a.hours, 0);
+                const hrs = u.attendance.reduce((sum, a) => sum + (a.status === "Hadir" ? a.hours : 0), 0);
                 totalElaunAll += hrs * 8.00;
             });
             document.getElementById('stat-total-elaun').innerText = `RM ${totalElaunAll.toFixed(2)}`;
 
-            // Render Squad Table
             const tableBody = document.getElementById('admin-squad-table');
             const warnSelect = document.getElementById('warn-pelatih-select');
 
@@ -929,24 +1122,24 @@
             warnSelect.innerHTML = '';
 
             filteredUsers.forEach(u => {
-                const totalHours = u.attendance.reduce((sum, a) => sum + a.hours, 0);
+                const totalHours = u.attendance.reduce((sum, a) => sum + (a.status === "Hadir" ? a.hours : 0), 0);
                 const elaun = (totalHours * 8.00).toFixed(2);
 
                 const actionTd = isAdmin1 ? `
                     <td class="p-2.5 text-center">
-                        <button onclick="toggleAdvUser('${u.badan}')" class="px-2.5 py-1 text-[10px] font-bold rounded-lg transition ${u.isAdvUser ? 'bg-emerald-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
+                        <button onclick="toggleAdvUser('${u.badan}')" class="px-2.5 py-1 text-[10px] font-bold rounded-lg transition ${u.isAdvUser ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-300'}">
                             ${u.isAdvUser ? 'Akses Lantikan Active' : 'Beri Akses Lantikan'}
                         </button>
                     </td>
                 ` : '';
 
                 tableBody.innerHTML += `
-                    <tr class="hover:bg-slate-50 transition">
-                        <td class="p-2.5 font-bold font-mono">${u.badan}</td>
-                        <td class="p-2.5 font-semibold text-navy-800">${u.nama}</td>
-                        <td class="p-2.5"><span class="bg-slate-100 text-navy-800 border border-slate-200 px-2 py-0.5 rounded text-[10px] font-bold">${u.skuad}</span></td>
-                        <td class="p-2.5">${u.hostel}</td>
-                        <td class="p-2.5 text-center font-bold">${totalHours} Jam</td>
+                    <tr class="hover:bg-slate-50 transition border-b border-slate-200">
+                        <td class="p-2.5 font-bold font-mono text-blue-900">${u.badan}</td>
+                        <td class="p-2.5 font-semibold text-slate-900">${u.nama}</td>
+                        <td class="p-2.5"><span class="bg-slate-100 text-slate-800 border border-slate-300 px-2 py-0.5 rounded text-[10px] font-bold">${u.skuad}</span></td>
+                        <td class="p-2.5 text-slate-600">${u.hostel}</td>
+                        <td class="p-2.5 text-center font-bold text-slate-900">${totalHours} Jam</td>
                         <td class="p-2.5 text-center font-bold text-emerald-600">RM ${elaun}</td>
                         ${actionTd}
                     </tr>
@@ -956,7 +1149,6 @@
             });
         }
 
-        // TOGGLE ADVANCED ROLLCALL APPOINTEE ACCESS (ADMIN 1 ONLY)
         function toggleAdvUser(badan) {
             const user = state.users.find(u => u.badan === badan);
             if (user) {
@@ -966,7 +1158,6 @@
             }
         }
 
-        // SEND WARNING LETTER
         function handleSendWarning(e) {
             e.preventDefault();
             const badan = document.getElementById('warn-pelatih-select').value;
@@ -975,20 +1166,19 @@
             const user = state.users.find(u => u.badan === badan);
             if (user) {
                 user.warnings.push(`Surat Amaran: ${reason}`);
-                alert(`Surat amaran berjaya dihantar secara terus ke akaun pelatih ${user.nama}.`);
+                alert(`Surat amaran berjaya dihantar ke akaun pelatih ${user.nama}.`);
                 document.getElementById('warn-reason').value = '';
             }
         }
 
-        // CREATE ANNOUNCEMENT (ADMIN 1 ONLY)
         function handleCreateAnnouncement(e) {
             e.preventDefault();
             const title = document.getElementById('ann-title').value;
             const content = document.getElementById('ann-content').value;
-            const dateToday = new Date().toISOString().split('T')[0];
+            const dateToday = "2026-08-18";
 
             state.announcements.unshift({ title, date: dateToday, content });
-            alert('Pengumuman baru berjaya disiarkan ke semua akaun pelatih.');
+            alert('Pengumuman baru berjaya disiarkan.');
             document.getElementById('ann-title').value = '';
             document.getElementById('ann-content').value = '';
             renderAnnouncements();
